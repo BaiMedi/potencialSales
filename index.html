@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Tasa de Conversión en Chats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .result {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #006400;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .cta {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0073e6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .cta a:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Calculadora de Tasa de Conversión en Chats</h1>
+
+    <!-- Input de número de chats -->
+    <label for="chats">Número de Chats Iniciados:</label>
+    <input type="number" id="chats" placeholder="Introduce el número de chats">
+
+    <!-- Input de número de ventas -->
+    <label for="ventas">Número de Ventas Realizadas:</label>
+    <input type="number" id="ventas" placeholder="Introduce el número de ventas">
+
+    <!-- Botón para calcular -->
+    <button onclick="calcularConversion()">Calcular Tasa de Conversión</button>
+
+    <!-- Resultado de la tasa de conversión -->
+    <div id="resultado" class="result"></div>
+
+    <!-- Llamado a la acción -->
+    <div class="cta">
+        <p>¿Quieres mejorar tu tasa de conversión? Aprende técnicas avanzadas de ventas en chat.</p>
+        <a href="https://www.lucrachatIA.com" target="_blank">Descubre más en Lucrachat IA</a>
+    </div>
+
+    <script>
+        // Función para calcular la tasa de conversión
+        function calcularConversion() {
+            // Obtener los valores de los inputs
+            const chats = document.getElementById('chats').value;
+            const ventas = document.getElementById('ventas').value;
+
+            // Validación de inputs
+            if (chats <= 0 || ventas < 0) {
+                document.getElementById('resultado').innerHTML = "Por favor, introduce valores válidos.";
+                return;
+            }
+
+            // Cálculo de la tasa de conversión
+            const tasaConversion = (ventas / chats) * 100;
+
+            // Mostrar el resultado en pantalla
+            document.getElementById('resultado').innerHTML = 
+                "Tu tasa de conversión es: " + tasaConversion.toFixed(2) + "%";
+        }
+    </script>
+
+</body>
+</html>
